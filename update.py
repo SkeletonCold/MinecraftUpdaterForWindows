@@ -59,9 +59,9 @@ for version in data['versions']:
             print('Updating server...')
             time.sleep(3)
         
-            logging.info('Stopping server.')
-            print('Stopping server.')
-            time.sleep(3)
+            # logging.info('Stopping server.')
+            # print('Stopping server.')
+            # time.sleep(3)
             # os.system("TASKKILL /F /IM java.exe")
             time.sleep(1)
             
