@@ -62,7 +62,7 @@ for version in data['versions']:
             logging.info('Stopping server.')
             print('Stopping server.')
             time.sleep(3)
-            os.system("TASKKILL /F /IM java.exe")
+            # os.system("TASKKILL /F /IM java.exe")
             time.sleep(1)
             
             if not os.path.exists(JARBACKUP_DIR):
@@ -85,27 +85,27 @@ for version in data['versions']:
             print('Downloaded.')
             time.sleep(1)
             
-            logging.info('Backing up world...')
-            print('Backing up world...')
+            # logging.info('Backing up world...')
+            # print('Backing up world...')
 
-            if not os.path.exists(BACKUP_DIR):
-                os.makedirs(BACKUP_DIR)
+            # if not os.path.exists(BACKUP_DIR):
+            #     os.makedirs(BACKUP_DIR)
 
-            backupPath = os.path.join(
-                BACKUP_DIR,
-                "world" + "_backup_" + datetime.now().isoformat().replace(':', '-') + "_sha=" + cur_ver)
-            shutil.copytree("world", backupPath)
+            # backupPath = os.path.join(
+            #     BACKUP_DIR,
+            #     "world" + "_backup_" + datetime.now().isoformat().replace(':', '-') + "_sha=" + cur_ver)
+            # shutil.copytree("world", backupPath)
             
-            time.sleep(1)
-            logging.info('Backed up world.')
-            print('Backed up world.')
-            time.sleep(1)
+            # time.sleep(1)
+            # logging.info('Backed up world.')
+            # print('Backed up world.')
+            # time.sleep(1)
             
-            logging.info('Starting server...')
-            print('Starting server...')
-            logging.info('==============================================================================')
-            time.sleep(1)
-            os.system('start call Manual_Run.bat')
+            # logging.info('Starting server...')
+            # print('Starting server...')
+            # logging.info('==============================================================================')
+            # time.sleep(1)
+            # os.system('start call Manual_Run.bat')
         else:
             print("Server Isn't running or Server is already up to date.")
             print('Latest version is ' + str(minecraft_ver))
