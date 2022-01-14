@@ -75,8 +75,8 @@ for version in data['versions']:
             time.sleep(2)
             
             link = jar_data['downloads']['server']['url']
-            logging.info('Downloading server.jar from ' + link + '...')
-            print('Downloading server.jar from ' + link + '...')
+            logging.info('Downloading server_' + str(minecraft_ver)+'.jar from ' + link + '...')
+            print('Downloading server_' + str(minecraft_ver)+'.jar from ' + link + '...')
             response = requests.get(link)
             time.sleep(5)
             with open('server.jar', 'wb') as jar_file:
