@@ -31,9 +31,9 @@ else:
     minecraft_ver = data['latest']['release']
 
 # get checksum of running server
-if os.path.exists('minecraft_server.jar'):
+if os.path.exists('server.jar'):
     sha = hashlib.sha1()
-    f = open("minecraft_server.jar", 'rb')
+    f = open("server.jar", 'rb')
     sha.update(f.read())
     cur_ver = sha.hexdigest()
 else:
@@ -71,15 +71,15 @@ for version in data['versions']:
             backupPath2 = os.path.join(
                 JARBACKUP_DIR,
                 "minecraft_server_sha=" + cur_ver + ".jar")
-            shutil.copy("minecraft_server.jar", backupPath2)
+            shutil.copy("server.jar", backupPath2)
             time.sleep(2)
             
             link = jar_data['downloads']['server']['url']
-            logging.info('Downloading minecraft_server.jar from ' + link + '...')
-            print('Downloading minecraft_server.jar from ' + link + '...')
+            logging.info('Downloading server.jar from ' + link + '...')
+            print('Downloading server.jar from ' + link + '...')
             response = requests.get(link)
             time.sleep(5)
-            with open('minecraft_server.jar', 'wb') as jar_file:
+            with open('server.jar', 'wb') as jar_file:
                 jar_file.write(response.content)
             logging.info('Downloaded.')
             print('Downloaded.')
